@@ -1,85 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+
 .form {
-    display: flex;
-    flex-direction: column;
-  }
-  .formSpacing {
-    margin-bottom: 2.6rem;
-  }
-  .formSpacingRegister {
-    margin-bottom: 1.6rem;
-  }
-  .formH1 {
-    font-size: 1.4rem;
-    margin-bottom: 1.4rem;
-    color: #0f2b33;
-  }
-  .field {
-    padding: 1rem 0.8rem;
-    border: 2px solid #bb9c56;
-    border-radius: 4px;
-  }
-  .label {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .doubleInputOne {
-    width: 7rem;
-  }
-  .doubleInputTwo {
-    width: 13rem;
-  }
-  .doubleInputThree {
-    width: 8.1rem;
-  }
-  .button {
-    background-color: #bb9c56;
-    border-radius: 1rem;
-    font-size: 1.5rem;
-    padding: 1rem 0.8rem;
-    font-weight: bold;
-  }
-  .button:hover {
-    background-color: #ffd700;
-  }
-  .button:active {
-    background-color: #b39700;
-  }
-  input:hover {
-    border: 2px solid #ffd700;
-  }
-  input:active {
-    border: 2px solid #0f2b33;
-  }
-  .inputRemember {
-    margin-right: 0.5rem;
-  }
-  .selectForm {
-    background-color: #0f2b33;
-    border-radius: 4px;
-    padding: 1rem 0.4rem;
-    width: 12.4rem;
-    color: #b39700;
-    margin-bottom: 1rem;
-    font-size: 0.96rem;
-    height: 3.5rem;
-    border: 2px solid #bb9c56;
-  }
-  .selectForm:hover {
-    border: 2px solid #ffd700;
-  }
-  .optionForm:hover {
-    background-color: #b39700;
-    color: #0f2b33;
-  }
-  .divDoubleInput {
-    display: flex;
-    justify-content: space-between;
-  }
-  .initialOptionForm {
-    background-color: #d3e8d3;
-    color: black;
-  }
-  .formPasswordRequirements {
-    color: #0f2b33;
-    margin-top: .4rem;
-  }
+  display: flex;
+  flex-direction: column;
+}
+.formSpacing {
+  margin-bottom: 2.6rem;
+}
+.formSpacingRegister {
+  margin-bottom: 1.6rem;
+}
+.formH1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+  color: #bb9c56;
+}
+.field {
+  padding: 1rem 0.8rem;
+  border: 2px solid #bb9c56;
+  border-radius: 4px;
+}
+.label {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.doubleInputOne {
+  width: 7rem;
+}
+.doubleInputTwo {
+  width: 13rem;
+}
+.doubleInputThree {
+  width: 8.1rem;
+}
+.button {
+  background-color: #bb9c56;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 0.8rem;
+  font-weight: bold;
+}
+.buttonRegister {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 1rem 2rem;
+}
+.button:hover {
+  background-color: #ffd700;
+}
+.button:active {
+  background-color: #b39700;
+}
+input:hover {
+  border: 2px solid #ffd700;
+}
+input:active {
+  border: 2px solid #0f2b33;
+}
+.inputRemember {
+  margin-right: 0.5rem;
+}
+.selectForm {
+  background-color: #0f2b33;
+  border-radius: 4px;
+  padding: 1rem 0.4rem;
+  width: 12.4rem;
+  color: #b39700;
+  margin-bottom: 1rem;
+  font-size: 0.96rem;
+  height: 3.5rem;
+  border: 2px solid #bb9c56;
+}
+.selectForm:hover {
+  border: 2px solid #ffd700;
+}
+.optionForm:hover {
+  background-color: #b39700;
+  color: #0f2b33;
+}
+.divDoubleInput {
+  display: flex;
+  justify-content: space-between;
+}
+.initialOptionForm {
+  background-color: #d3e8d3;
+  color: black;
+}
+.formPasswordRequirements {
+  color: #0f2b33;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  margin-bottom: 4rem;
+}
+.formUserH2 {
+  color: #0f2b33;
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+}
+.buttonDivRegister {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+
 .container {
     height: 100vh;
     display: flex;
@@ -42,7 +44,6 @@
       border: none;
     }
   }
-  
   .formContainer {
     width: 100%;
     max-width: 340px;
@@ -58,4 +59,25 @@
   }
   .formContainerRegister {
       height: 49rem;
+  }
+  .logoDashboard {
+    height: 6rem;
+    width: 6rem;
+  }
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: .2rem;
+    margin-bottom: -6rem;
+  }
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: -5rem;
+    margin-bottom: 1rem;
+  }
+  .titleDashboard {
+    color: #bb9c56;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 3rem;
   }

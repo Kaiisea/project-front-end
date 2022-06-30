@@ -1,7 +1,7 @@
 import classes from "./Login.module.css";
 import breaks from "../../Breakpoint.css";
 
-export function Register() {
+export function MemberRegister() {
   return (
     <div>
       <form className={classes.form}>
