@@ -79,4 +79,7 @@
     background-color: #d3e8d3;
     color: black;
   }
-  
+  .formPasswordRequirements {
+    color: #0f2b33;
+    margin-top: .4rem;
+  }
