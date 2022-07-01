@@ -6,7 +6,7 @@ import { RegisterDashboard } from './components/main/RegisterDashboard';
 function App() {
   return (
     <div>
-      <RegisterDashboard/>
+      <LoginDashboard/>
     </div>
   );
 }

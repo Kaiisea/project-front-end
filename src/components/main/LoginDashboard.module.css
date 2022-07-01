@@ -1,83 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
 
 .container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 5px solid #bb9c56;
+}
+
+.formButtonDiv {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .2rem;
+}
+
+.formButton {
+  background-color: #bb9c56;
+  margin: .1rem .7rem .4rem .7rem;
+  padding: 1rem 4.4rem;
+  border-radius: .8rem;
+  font-size: 1.2rem;
+}
+.formButtonHome {
+  padding: 1rem 5.3rem !important; 
+}
+.formButton:hover {
+  background-color: #ffd700;
+}
+
+.formButton:active {
+  background-color: #b39700;
+}
+
+.borderContainer {
+  width: 100%;
+  max-width: 360px;
+  padding-top: 3px;
+  border-radius: 12px;
+  margin: 0 auto;
+  border: none;
+}
+
+.borderContainerLogin {
+  height: 42rem;
+}
+
+.borderContainerRegister {
+  height: 50.3rem;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  background-color: #d3e8d3;
+  border: 5px solid #bb9c56;
+  padding: 2.8rem;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px 5px rgba(150, 150, 150, 0.15);
+}
+
+.formContainerLogin {
+  height: 36rem;
+}
+
+.formContainerRegister {
+  height: 49rem;
+}
+
+.logoDashboard {
+  height: 6rem;
+  width: 6rem;
+}
+
+.homeDashboard {
+  height: 2rem;
+  width: 2rem;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: .2rem;
+  margin-bottom: -8rem;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: -5rem;
+  margin-bottom: 1rem;
+}
+
+.titleDashboard {
+  color: #bb9c56;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .borderContainer {
     border: 5px solid #bb9c56;
-  }
-  
-  .formButtonDiv {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: .2rem;
   }
   .formButton {
-      background-color: #bb9c56;
-      margin: .1rem .3rem;
-      padding: 1.2rem 5rem;
-      border-radius: .8rem;
+    padding: 1.2rem 4.6rem;
+    margin: .1rem .3rem
   }
-  .formButton:hover {
-      background-color: #ffd700;
-  }
-  .formButton:active {
-      background-color: #b39700;
-  }
-  .borderContainer {
-    width: 100%;
-    max-width: 360px;
-    padding-top: 3px;
-    border-radius: 12px;
-    margin: 0 auto;
-    border: 5px solid #bb9c56;
-  }
-  .borderContainerLogin {
-      height: 41.4rem;
-  }
-  .borderContainerRegister {
-      height: 50.3rem;
-  }
-  @media only screen and (max-width: 480px) {
-    .borderContainer {
-      border: none;
-    }
-  }
-  .formContainer {
-    width: 100%;
-    max-width: 340px;
-    margin: 0 auto;
-    background-color: #d3e8d3;
-    border: 5px solid #bb9c56;
-    padding: 2.8rem;
-    border-radius: 8px;
-    box-shadow: 5px 5px 15px 5px rgba(150, 150, 150, 0.15);
-  }
-  .formContainerLogin {
-      height: 36rem;
-  }
-  .formContainerRegister {
-      height: 49rem;
-  }
-  .logoDashboard {
-    height: 6rem;
-    width: 6rem;
+  .formButtonHome {
+    padding: 1rem 5.4rem !important; 
   }
   .imgContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: .2rem;
-    margin-bottom: -6rem;
+    margin-top: 1.4rem;
   }
-  .titleContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: -5rem;
-    margin-bottom: 1rem;
+  .logoDashboard {
+    height: 8rem;
+    width: 8rem;
   }
-  .titleDashboard {
-    color: #bb9c56;
-    font-family: 'Six Caps', sans-serif;
-    font-size: 3rem;
-  }
+}
