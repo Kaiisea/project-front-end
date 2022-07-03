@@ -1,0 +1,10 @@
+.mainDiv {
+    border-left: 1rem solid #b39700;
+    border-right: 1rem solid #b39700;
+}
+.secondDiv {
+    border: 1rem solid #b39700;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 0rem .6rem
+}

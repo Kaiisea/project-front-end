@@ -1,0 +1,22 @@
+.logoFooter {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: -.2rem .6rem 0rem;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+    border-bottom: 1rem solid #b39700;
+    border-right: 1rem solid #b39700;
+    border-left: 1rem solid #b39700;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: #202F36;
+    color: #b39700;
+    font-weight: bold;
+    font-family: fredoka;
+    font-size: 1.4rem;
+    height: 6vh;
+  }

@@ -1,5 +1,5 @@
 import classes from "./Login.module.css";
-import breaks from "../../Breakpoint.css";
+import { Link } from "react-router-dom"
 
 export function UserRegister() {
   return (
@@ -32,19 +32,16 @@ export function UserRegister() {
           least one digit
         </h5>
         <div className={classes.buttonDivRegister}>
-          <button type="submit" className={`${classes.button} ${classes.buttonRegister}`}>
+        <Link to="/login"><button type="submit" className={`${classes.button} ${classes.buttonRegister}`} >
             B a c k &nbsp;&nbsp;&nbsp;t o &nbsp;&nbsp;&nbsp;l o g i n
-          </button>
+          </button></Link>
         </div>
         <div className={classes.buttonDivRegister}>
-          <button type="submit"  className={`${classes.button} ${classes.buttonRegister}`}>
+        <Link to="/register-member"><button type="submit" className={`${classes.button} ${classes.buttonRegister}`}>
             C o n t i n u e &nbsp;&nbsp;&nbsp;r e g i s t e r i n g
-          </button>
+          </button></Link>
         </div>
       </form>
     </div>
   );
-  // Component.propTypes = {
-  //     first_name: PropTypes.string.isRequired
-  // }
 }

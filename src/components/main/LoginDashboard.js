@@ -1,8 +1,10 @@
+import React from "react";
 import { Login } from "./Login";
-import { Register } from "./MemberRegister"
+import { Register } from "./MemberRegister";
 import classes from "./LoginDashboard.module.css";
-import logo from "../img/logo.jpeg"
-import home from "../img/homeIcon.png"
+import logo from "../img/logo.jpeg";
+import home from "../img/homeIcon.png";
+import { Link } from "react-router-dom";
 
 export function LoginDashboard() {
   return (
@@ -14,7 +16,7 @@ export function LoginDashboard() {
         <div className={`${classes.borderContainer} ${classes.borderContainerLogin}`}>
             <div className={classes.formButtonDiv}>
             <button className={`${classes.formButton} ${classes.formButtonHome}`}><img src={home} className={classes.homeDashboard} /></button>
-            <button className={classes.formButton}>Register</button>
+            <Link to="/register"><button className={classes.formButton}>Register</button></Link>
           </div>
           <div className={`${classes.formContainer} ${classes.formContainerLogin}`}>
             <Login />

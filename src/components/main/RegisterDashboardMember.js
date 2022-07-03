@@ -6,7 +6,7 @@ import logo from "../img/logo.jpeg";
 import { Link } from "react-router-dom";
 
 
-export function RegisterDashboard(props) {
+export function RegisterDashboardMember() {
   return (
     <section>
       <div className={classes.container}>
@@ -15,7 +15,7 @@ export function RegisterDashboard(props) {
         </div>
         <div className={`${classes.borderContainer} ${classes.borderContainerRegister}`}>
           <div className={`${classes.formContainer} ${classes.formContainerRegister}`}>
-          <UserRegister/>
+          <MemberRegister/>
           </div>
         </div>
         <div className={classes.imgContainerRegister}>

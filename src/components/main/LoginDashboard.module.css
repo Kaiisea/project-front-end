@@ -22,7 +22,7 @@
   font-size: 1.2rem;
 }
 .formButtonHome {
-  padding: 1rem 5.3rem !important; 
+  padding: 0rem 5.3rem !important; 
 }
 .formButton:hover {
   background-color: #ffd700;
@@ -72,7 +72,10 @@
   height: 6rem;
   width: 6rem;
 }
-
+.logoDashboardRegister {
+  height: 5rem;
+  width: 5rem;
+}
 .homeDashboard {
   height: 2rem;
   width: 2rem;
@@ -84,7 +87,12 @@
   margin-top: .2rem;
   margin-bottom: -8rem;
 }
-
+.imgContainerRegister {
+  display: flex;
+  justify-content: center;
+  margin-top: .2rem;
+  margin-bottom: -6rem;
+}
 .titleContainer {
   display: flex;
   justify-content: center;
@@ -103,11 +111,11 @@
     border: 5px solid #bb9c56;
   }
   .formButton {
-    padding: 1.2rem 4.6rem;
+    padding: 1.4rem 4.6rem;
     margin: .1rem .3rem
   }
   .formButtonHome {
-    padding: 1rem 5.4rem !important; 
+    padding: 0rem 5.4rem !important; 
   }
   .imgContainer {
     margin-top: 1.4rem;
@@ -115,5 +123,12 @@
   .logoDashboard {
     height: 8rem;
     width: 8rem;
+  }
+  .logoDashboardRegister {
+    height: 8rem;
+    width: 8rem;
+  }
+  .imgContainerRegister {
+    margin-top: .8rem;
   }
 }

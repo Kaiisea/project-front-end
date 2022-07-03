@@ -75,10 +75,6 @@ input:active {
 .selectForm:hover {
   border: 2px solid #ffd700;
 }
-.optionForm:hover {
-  background-color: #b39700;
-  color: #0f2b33;
-}
 .divDoubleInput {
   display: flex;
   justify-content: space-between;
@@ -102,4 +98,33 @@ input:active {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+}
+.birthDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.birthOption {
+  background-color: #0f2b33;
+  border-radius: 4px;
+  padding: 1rem 1rem;
+  width: 6rem;
+  color: #b39700;
+  margin: 0rem 0rem 3rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  height: 3.5rem;
+  border: 2px solid #bb9c56;
+}
+.birthOptionYear {
+  width: 7rem;
+}
+.formUpload {
+  font-size: 1rem;
+}
+.registerH3 {
+  color: #b39700;
+  margin-bottom: 1.2rem;
+}
+.h3Spacing {
+  margin-top: 1.6rem;
 }
