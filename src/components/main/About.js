@@ -1,5 +1,8 @@
 import classes from "./About.module.css"
 import Profile from "../img/profile.jpg";
+import Instagram from "../img/Instagram.png";
+import Twitter from "../img/Twitter.png";
+import Twitch from "../img/Twitch.png";
 
 const About = () => {
   return (
@@ -15,8 +18,14 @@ const About = () => {
         chatting and playing videogames. Visit us! 🦄💜
       </p></div><div className={classes.insideFlexCenter}><div className={classes.insideFlexBorder}><div className={classes.insideFlexBorder2}>
       <img src={Profile} className={classes.photoAbout} />
-      </div></div></div></div>
-    </div>
+      </div></div></div>
+      <div className={classes.insideFlexCenter}>
+      <div className={classes.divSocialMediaBorder}>
+        <div className={classes.divSocialMedia}><img src={Instagram} className={classes.photoSocialMedia} /><div className={classes.divSocialMediaTitle}>Instagram</div></div>
+        <div className={classes.divSocialMedia}><img src={Twitter} className={classes.photoSocialMedia} /><div className={classes.divSocialMediaTitle}>Twitter</div></div>
+        <div className={classes.divSocialMedia}><img src={Twitch} className={classes.photoSocialMedia} /><div className={classes.divSocialMediaTitle}>Twitch</div></div>
+      </div></div>
+    </div></div>
   );
 };
 export default About;
