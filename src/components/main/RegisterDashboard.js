@@ -6,7 +6,7 @@ import logo from "../img/logo.jpeg";
 import { Link } from "react-router-dom";
 
 
-export function RegisterDashboard(props) {
+function RegisterDashboard(props) {
   return (
     <section>
       <div className={classes.container}>
@@ -25,3 +25,4 @@ export function RegisterDashboard(props) {
     </section>
   );
 }
+export default RegisterDashboard;

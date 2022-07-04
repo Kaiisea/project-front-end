@@ -3,6 +3,38 @@ import { Link } from "react-router-dom";
 
 
 export function MemberRegister() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.login.login.data);
+  const loading = useSelector((state) => state.login.login.loading);
+  const status = useSelector((state) => state.login.status);
+  const error = useSelector((state) => state.login.error);
+  const [data, setData] = useState({
+    first_name: "",
+    last_name: "",
+    twitch_username: "",
+    pronouns: "",
+    phone: "",
+    photo: "",
+    birth_day: "",
+    birth_month: "",
+    birth_year: "",
+  });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addNewUser(data)).then(() => {
+        setData({
+          email: "",
+          password: "",
+        });
+      });
+  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
   return (
     <div>
       <form className={classes.form}>
@@ -12,12 +44,16 @@ export function MemberRegister() {
             id="first_name"
             type="first_name"
             placeholder="Name"
+            value={data.first_name}
+          required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputOne}`}
           />
           <input
             id="last_name"
             type="last_name"
             placeholder="Last name"
+            value={data.last_name}
+          required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputTwo}`}
           />
         </div>
@@ -26,9 +62,12 @@ export function MemberRegister() {
             id="twitch_username"
             type="twitch_username"
             placeholder="User name"
+            value={data.twitch_username}
+          required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputThree}`}
           />
-          <select id="pronouns" name="pronouns" className={classes.selectForm}>
+          <select id="pronouns" name="pronouns" value={data.pronouns}
+          required className={classes.selectForm}>
             <option value="he" className={classes.initialOptionForm}>
               Choose your pronouns
             </option>
@@ -66,15 +105,19 @@ export function MemberRegister() {
           id="phone"
           type="phone"
           placeholder="Telephone number"
+          value={data.phone}
+          required
           className={`${classes.field} ${classes.formSpacingRegister}`}
         />
         <form action="/action_page.php">
           <h3 className={classes.registerH3}>Upload your profile photo</h3>
-          <input type="file" id="photo" name="filename"/>
+          <input type="file" id="photo" name="filename" value={data.photo}
+          required/>
         </form>   
         <h3 className={`${classes.registerH3} ${classes.h3Spacing}`}>Choose your birth date</h3>       
         <div className={classes.birthDiv}>
-          <select id="birth_day" name="birth_day" className={classes.birthOption}>
+          <select id="birth_day" name="birth_day" value={data.birth_day}
+          required className={classes.birthOption}>
             <option value="1" >1</option>
             <option value="2" >2</option>
             <option value="3" >3</option>
@@ -107,7 +150,8 @@ export function MemberRegister() {
             <option value="30">30</option>
             <option value="31">31</option>
           </select>
-          <select id="birth_month" name="birth_month" className={classes.birthOption}>
+          <select id="birth_month" name="birth_month" value={data.birth_month}
+          required className={classes.birthOption}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -121,7 +165,8 @@ export function MemberRegister() {
             <option value="11">11</option>
             <option value="12">12</option>
           </select>
-          <select id="birth_year" name="birth_year" className={`${classes.birthOption} ${classes.birthOptionYear}`}>
+          <select id="birth_year" name="birth_year" value={data.birth_year}
+          required className={`${classes.birthOption} ${classes.birthOptionYear}`}>
             <option value="2008" >2008</option>
             <option value="2007" >2007</option>
             <option value="2006" >2006</option>

@@ -6,7 +6,7 @@ import logo from "../img/logo.jpeg";
 import home from "../img/homeIcon.png";
 import { Link } from "react-router-dom";
 
-export function LoginDashboard() {
+function LoginDashboard() {
   return (
     <section>
       <div className={classes.container}>
@@ -29,3 +29,4 @@ export function LoginDashboard() {
     </section>
   );
 }
+export default LoginDashboard;

@@ -1,7 +1,35 @@
 import classes from "./Login.module.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewUser, signIn } from "../../store/loginSlice";
 
 export function UserRegister() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.login.login.data);
+  const loading = useSelector((state) => state.login.login.loading);
+  const status = useSelector((state) => state.login.status);
+  const error = useSelector((state) => state.login.error);
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addNewUser(data)).then(() => {
+        setData({
+          email: "",
+          password: "",
+        });
+      });
+  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
   return (
     <div>
       <form className={classes.form}>
@@ -13,6 +41,8 @@ export function UserRegister() {
           id="email"
           type="email"
           placeholder="Email"
+          value={data.email}
+          required
           className={`${classes.field} ${classes.formSpacingRegister}`}
         />
         <h2 className={`${classes.formSpacingRegister} ${classes.formUserH2}`}>
@@ -22,6 +52,8 @@ export function UserRegister() {
           id="password"
           type="password"
           placeholder="Password"
+          value={data.password}
+          required
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           className={`${classes.field}`}
         />

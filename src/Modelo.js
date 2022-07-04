@@ -1,9 +1,8 @@
 import './App.css';
-import AccessForm from './components/main/AccesForm';
 import { LoginDashboard } from './components/main/LoginDashboard';
 import { RegisterDashboard } from './components/main/RegisterDashboard';
 import { RegisterDashboardMember } from './components/main/RegisterDashboardMember';
-import { Home } from './components/main/Home';
+import { Home} from './components/main/Home';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
 
