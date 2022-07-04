@@ -6,6 +6,7 @@ import logo from "../img/logo.jpeg";
 import { Link } from "react-router-dom";
 
 
+
 function RegisterDashboard(props) {
   return (
     <section>

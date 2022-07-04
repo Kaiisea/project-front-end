@@ -1,9 +1,9 @@
 .mainDiv {
-    border-left: 1rem solid #b39700;
-    border-right: 1rem solid #b39700;
+    border-left: .8rem solid #bb9c56;
+    border-right: .8rem solid #bb9c56;
 }
 .secondDiv {
-    border: 1rem solid #b39700;
+    border: .6rem solid #bb9c56;
     border-radius: 2rem;
     padding: 1rem;
     margin: 0rem .6rem

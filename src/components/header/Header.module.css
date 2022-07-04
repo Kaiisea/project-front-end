@@ -3,9 +3,9 @@
   padding: 0em;
   list-style-type: none;
   background-color: #202F36;
-  border-top: 1rem solid #b39700;
-  border-right: 1rem solid #b39700;
-  border-left: 1rem solid #b39700;
+  border-top: .8rem solid #bb9c56;
+  border-right: .8rem solid #bb9c56;
+  border-left: .8rem solid #bb9c56;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   font-size: 1.3rem;
@@ -20,7 +20,7 @@
 .headerNav>li>a {
   display: block;
   padding: 0.5em 0rem;
-  color: #b39700;
+  color: #bb9c56;
   text-decoration: none;
 }
 
@@ -33,7 +33,7 @@
   position: relative;
   display: inline-block;
   padding: 0.5em 2rem;
-  color: #b39700;
+  color: #bb9c56;
 }
 
 .logoHeader {
@@ -79,7 +79,7 @@
   z-index: 1;
 }
 
-.nav>.navRight:hover .dropDown {
+.nav > .navRight:hover .dropDown {
   display: block;
 }
 
@@ -90,9 +90,11 @@
 .dropDown li a {
   text-align: center;
   padding: 0.3em 1em;
+  text-decoration: none;
+  color: #bb9c56;
 }
 
 .dropDown li a:hover {
-  background-color: #b39700;
+  background-color: #bb9c56;
   color: #202F36;
 }

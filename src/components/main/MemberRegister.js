@@ -1,6 +1,8 @@
 import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewUser, signIn } from "../../store/loginSlice";
 
 export function MemberRegister() {
   const dispatch = useDispatch();

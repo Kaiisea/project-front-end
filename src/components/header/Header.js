@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import classes from "./Header.module.css";
 import logo from "../img/logo.jpeg";
 
-export function Header() {
+function Header() {
   const logged = useSelector((state) => state.login.login.isLogged);
   const dispatch = useDispatch();
   const handleLogOut = () => {
@@ -51,6 +51,7 @@ export function Header() {
     </header>
   );
 }
+export default Header
 // export function Header() {
 //   return (
 //     <header>

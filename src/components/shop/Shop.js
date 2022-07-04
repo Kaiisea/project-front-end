@@ -1,6 +1,36 @@
 const Shop = ()=> {
     return (
-<h2>Hola</h2>
+<div>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+      <h2>Shop</h2>
+    </div>
     )
 }
 export default Shop;
