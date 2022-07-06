@@ -21,22 +21,21 @@
   --dark: #292a2b;
   --light-gray: #d0dbe3;
   font-size: 0.785rem;
-  background-color: #fff;
-}
-body {
   background-color: #202F36;
+}
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 /* Vertical and horizontal centering */
 
 .flexCenter {

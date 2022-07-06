@@ -2,33 +2,36 @@
   display: flex;
   padding: 0em;
   list-style-type: none;
-  background-color: #202F36;
-  border-top: .8rem solid #bb9c56;
-  border-right: .8rem solid #bb9c56;
-  border-left: .8rem solid #bb9c56;
+  background-color: #202f36;
+  border-top: 0.8rem solid #bb9c56;
+  border-right: 0.8rem solid #bb9c56;
+  border-left: 0.8rem solid #bb9c56;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   font-size: 1.3rem;
+  font-weight: bold;
   min-height: 10vh;
   align-items: center;
 }
-
-.headerNav>li {
+.headerNav ul {
+  list-style-type: none;
+}
+.headerNav > li {
   margin-top: 0;
 }
 
-.headerNav>li>a {
+.headerNav > li > a {
   display: block;
   padding: 0.5em 0rem;
   color: #bb9c56;
   text-decoration: none;
 }
 
-.headerNav>li+li {
-  margin-left: 1.2rem;
+.headerNav > li + li {
+  margin-left: 2rem;
 }
 
-.headerNav>.navRight {
+.headerNav > .navRight {
   margin-left: auto;
   position: relative;
   display: inline-block;
@@ -37,36 +40,47 @@
 }
 
 .logoHeader {
-  width: 4.4rem;
-  height: 3.8rem;
-  margin: -1rem -.8rem -1rem .4rem;
+  width: 5rem;
+  height: 4.6rem;
+  margin: -.4rem -.8rem -1rem 1rem;
+}
+.logoSocialMedia {
+  width: 100%;
+  height: 100%;
+}
+.socialBorder:hover {
+  border: 3px solid #ffd700;
+  padding: 0 auto;
+}
+.socialBorder {
+  border: 2px solid #bb9c56;
+  border-radius: 2rem;
+  margin: 0rem 1rem;
+  padding: .2rem;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+.socialDiv {
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  justify-content: space-between;
+
 }
 
-@media only screen and (min-width: 480px) {
-  .headerNav {
-    padding: 0.9em;
-    font-size: 1.3rem;
-  }
-
-  .headerNav>li>a {
-    padding: 0.5em 1em;
-  }
-
-  .headerNav>li+li {
-    margin-left: 1.5em;
-  }
-
+@media only screen and (max-width: 380px) {
   .headerNav>.navRight {
-    padding: 0.5em 1em
+    padding: 0.5em 2rem .5rem .8rem;
   }
-
-  .logoHeader {
-    width: 6rem;
-    height: 4.4em;
-    margin: -1rem .2rem -1rem .6rem;
+  li {
+    font-size: 1.1rem;
+  }
+  .socialBorder {
+    width: 3rem;
+    height: 3rem;
+    margin: 0rem .4rem;
   }
 }
-
 .dropDown {
   display: none;
   position: absolute;
@@ -79,10 +93,14 @@
   z-index: 1;
 }
 
-.nav > .navRight:hover .dropDown {
+.headerNav > .navRight:hover .dropDown {
   display: block;
+  background-color: #202f36;
 }
-
+.headerNav > .navRight:hover{
+  color: #202f36;
+  background-color: #bb9c56;
+}
 .dropDown a {
   display: block;
 }
@@ -96,5 +114,5 @@
 
 .dropDown li a:hover {
   background-color: #bb9c56;
-  color: #202F36;
+  color: #202f36;
 }

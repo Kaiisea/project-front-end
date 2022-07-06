@@ -15,7 +15,7 @@ function LoginDashboard() {
         </div>
         <div className={`${classes.borderContainer} ${classes.borderContainerLogin}`}>
             <div className={classes.formButtonDiv}>
-            <button className={`${classes.formButton} ${classes.formButtonHome}`}><img src={home} className={classes.homeDashboard} /></button>
+            <Link to="/"><button className={`${classes.formButton} ${classes.formButtonHome}`}><img src={home} className={classes.homeDashboard} /></button></Link>
             <Link to="/register"><button className={classes.formButton}>Register</button></Link>
           </div>
           <div className={`${classes.formContainer} ${classes.formContainerLogin}`}>

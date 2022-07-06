@@ -1,0 +1,10 @@
+.mainDiv {
+    display: flex;
+    
+}
+.bannerHorizontal {
+    border: 2px solid #bb9c56;
+    background-color: #d3e8d3;
+    height: 8rem;
+    max-width: 80%;
+}

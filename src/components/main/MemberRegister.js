@@ -24,11 +24,11 @@ export function MemberRegister() {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(addNewUser(data)).then(() => {
-        setData({
-          email: "",
-          password: "",
-        });
+      setData({
+        email: "",
+        password: "",
       });
+    });
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,7 +47,7 @@ export function MemberRegister() {
             type="first_name"
             placeholder="Name"
             value={data.first_name}
-          required
+            required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputOne}`}
           />
           <input
@@ -55,7 +55,7 @@ export function MemberRegister() {
             type="last_name"
             placeholder="Last name"
             value={data.last_name}
-          required
+            required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputTwo}`}
           />
         </div>
@@ -65,11 +65,16 @@ export function MemberRegister() {
             type="twitch_username"
             placeholder="User name"
             value={data.twitch_username}
-          required
+            required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputThree}`}
           />
-          <select id="pronouns" name="pronouns" value={data.pronouns}
-          required className={classes.selectForm}>
+          <select
+            id="pronouns"
+            name="pronouns"
+            value={data.pronouns}
+            required
+            className={classes.selectForm}
+          >
             <option value="he" className={classes.initialOptionForm}>
               Choose your pronouns
             </option>
@@ -113,22 +118,34 @@ export function MemberRegister() {
         />
         <form action="/action_page.php">
           <h3 className={classes.registerH3}>Upload your profile photo</h3>
-          <input type="file" id="photo" name="filename" value={data.photo}
-          required/>
-        </form>   
-        <h3 className={`${classes.registerH3} ${classes.h3Spacing}`}>Choose your birth date</h3>       
+          <input
+            type="file"
+            id="photo"
+            name="filename"
+            value={data.photo}
+            required
+          />
+        </form>
+        <h3 className={`${classes.registerH3} ${classes.h3Spacing}`}>
+          Choose your birth date
+        </h3>
         <div className={classes.birthDiv}>
-          <select id="birth_day" name="birth_day" value={data.birth_day}
-          required className={classes.birthOption}>
-            <option value="1" >1</option>
-            <option value="2" >2</option>
-            <option value="3" >3</option>
-            <option value="4" >4</option>
-            <option value="5" >5</option>
-            <option value="6" >6</option>
-            <option value="7" >7</option>
-            <option value="8" >8</option>
-            <option value="9" >9</option>
+          <select
+            id="birth_day"
+            name="birth_day"
+            value={data.birth_day}
+            required
+            className={classes.birthOption}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
@@ -152,8 +169,13 @@ export function MemberRegister() {
             <option value="30">30</option>
             <option value="31">31</option>
           </select>
-          <select id="birth_month" name="birth_month" value={data.birth_month}
-          required className={classes.birthOption}>
+          <select
+            id="birth_month"
+            name="birth_month"
+            value={data.birth_month}
+            required
+            className={classes.birthOption}
+          >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -167,17 +189,22 @@ export function MemberRegister() {
             <option value="11">11</option>
             <option value="12">12</option>
           </select>
-          <select id="birth_year" name="birth_year" value={data.birth_year}
-          required className={`${classes.birthOption} ${classes.birthOptionYear}`}>
-            <option value="2008" >2008</option>
-            <option value="2007" >2007</option>
-            <option value="2006" >2006</option>
-            <option value="2005" >2005</option>
-            <option value="2004" >2004</option>
-            <option value="2003" >2003</option>
-            <option value="2002" >2002</option>
-            <option value="2001" >2001</option>
-            <option value="2000" >2000</option>
+          <select
+            id="birth_year"
+            name="birth_year"
+            value={data.birth_year}
+            required
+            className={`${classes.birthOption} ${classes.birthOptionYear}`}
+          >
+            <option value="2008">2008</option>
+            <option value="2007">2007</option>
+            <option value="2006">2006</option>
+            <option value="2005">2005</option>
+            <option value="2004">2004</option>
+            <option value="2003">2003</option>
+            <option value="2002">2002</option>
+            <option value="2001">2001</option>
+            <option value="2000">2000</option>
             <option value="1999">1999</option>
             <option value="1998">1998</option>
             <option value="1997">1997</option>
@@ -229,10 +256,23 @@ export function MemberRegister() {
             <option value="1951">1951</option>
             <option value="1950">1950</option>
           </select>
-        </div><Link to="/login">
-        <button type="submit" className={`${classes.button} ${classes.buttonRegister}`}>
-          L &nbsp;O &nbsp;G &nbsp;I &nbsp;N
-        </button></Link>
+        </div>
+        <div className={classes.buttonDiv}>
+        <Link to="/login">
+          <button
+            type="submit"
+            className={`${classes.button} ${classes.buttonRegister}`}
+          >
+            B A C K &nbsp;T O &nbsp;L O G I N
+          </button>
+        </Link>
+        <button
+          type="submit"
+          className={`${classes.button} ${classes.buttonRegistering}`}
+        >
+          R E G I S T E R
+        </button>
+        </div>
       </form>
     </div>
   );

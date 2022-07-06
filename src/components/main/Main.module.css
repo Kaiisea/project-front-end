@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Six+Caps&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+.h1Welcome {
+  display: flex;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-family: "Six Caps", sans-serif;
+}
+.centerAll {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0rem;
+}
+.trailerDivBorder {
+  border: 4px solid #bb9c56;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  max-width: 80rem;
+}
+.logoTitle {
+  position: absolute;
+  margin-top: -2.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+.trailerDiv {
+  display: flex;
+  justify-content: center;
+  border: 4px solid #bb9c56;
+}
+.trailer {
+  width: 100%;
+}
+.h2Section {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: "Six Caps", sans-serif;
+  color: #bb9c56;
+}
+.divFlex {
+  display: flex;
+  flex-direction: row;
+}
+.insideFlex {
+  width: 50%;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.pAbout {
+  color: #bb9c56;
+  font-size: 1.4rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+  font-family: "Satisfy", cursive;
+  font-size: 2rem;
+}
+.insideFlexCenter {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 1rem 0rem;
+}
+.insideFlexBorder {
+  max-width: 50rem;
+  border: 2px solid #bb9c56;
+  padding: 0.4rem;
+}
+.insideFlexBorder2 {
+  border: 2px solid #bb9c56;
+}
+.photoAbout {
+  width: 100%;
+  height: 100%;
+  min-height: 25rem;
+}
+@media only screen and (max-width: 1115px) {
+  .divFlex {
+    flex-direction: column;
+  }
+  .insideFlex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .insideFlexCenter {
+    width: 100%;
+    margin: 0rem;
+  }
+  .pAbout {
+    font-size: 1.6rem;
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .h1Welcome {
+    font-size: 3rem;
+  }
+  .centerAll {
+    margin: 3rem 2rem;
+  }
+  .logoTitle {
+    margin-top: -4rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .h2Section {
+    font-size: 4.2rem;
+  }
+ 
+
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Six+Caps&display=swap");
 
 .form {
   display: flex;
@@ -41,10 +41,20 @@
   font-weight: bold;
 }
 .buttonRegister {
-  font-family: 'Six Caps', sans-serif;
-  font-size: 2rem;
+  font-family: "Six Caps", sans-serif;
+  font-size: 1.8rem;
   font-weight: lighter;
-  padding: 1rem 2rem;
+  padding: 1rem 1.4rem;
+}
+.buttonRegistering {
+  font-family: "Six Caps", sans-serif;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  padding: 1rem 2.6rem;
+}
+.buttonDiv {
+  display: flex;
+  justify-content: space-between;
 }
 .button:hover {
   background-color: #ffd700;
@@ -127,4 +137,32 @@ input:active {
 }
 .h3Spacing {
   margin-top: 1.6rem;
+}
+@media only screen and (max-width: 405px) {
+  .formH1 {
+    font-size: 1.2rem;
+    margin: 0rem 0rem 0.8rem;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 0.6rem 0rem;
+  }
+  .formUserH2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .formPasswordRequirements {
+    font-size: 1rem;
+    margin-right: -1rem;
+    margin-top: 0.4rem;
+  }
+  .buttonRegister {
+    font-size: 1.6rem;
+    padding: 1rem 1.4rem;
+  }
+  .buttonRegistering {
+    font-size: 1.6rem;
+    font-weight: lighter;
+    padding: 0rem 2.4rem;
+  }
 }

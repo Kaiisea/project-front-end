@@ -13,7 +13,7 @@ import classes from "./Schedule.module.css"
 const Schedule = () => {
   return (
   <div className={classes.divCenter}>
-    <h1>Week 2 of August</h1>
+    <h1>Week 2 of July</h1>
     <table>
         <tr>
             <th>Hora</th>
