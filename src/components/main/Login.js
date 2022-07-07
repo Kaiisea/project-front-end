@@ -2,6 +2,8 @@ import classes from "./Login.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewUser, signIn } from "../../store/loginSlice";
+import Spinner from "../spinner/Spinner";
+import Alert from "../alert/Alert"
 
 export function Login() {
   const dispatch = useDispatch();
@@ -15,12 +17,12 @@ export function Login() {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-      dispatch(signIn(data)).then(() => {
-        setData({
-          email: "",
-          password: "",
-        });
+    dispatch(signIn(data)).then(() => {
+      setData({
+        email: "",
+        password: "",
       });
+    });
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +33,11 @@ export function Login() {
   };
   return (
     <div>
-      <form className={classes.form}>
+      {loading && <Spinner />}
+      {status === "succeeded" && user.status === "failed" && (
+        <Alert type="error" message={user.error} />
+      )}
+      <form className={classes.form} onSubmit={handleSubmit}>
         <h1 className={classes.formH1}>Welcome to Porocornio's Army</h1>
         <label htmlFor="username" className={classes.label}>
           Username
@@ -39,6 +45,7 @@ export function Login() {
         <input
           id="email"
           type="email"
+          name="email"
           placeholder="Enter your email"
           value={data.email}
           onChange={handleChange}
@@ -46,12 +53,12 @@ export function Login() {
           className={`${classes.field} ${classes.formSpacing}`}
         />
         <label htmlFor="password" className={classes.label}>
-          {" "}
-          Password{" "}
+          Passwor
         </label>
         <input
           id="password"
           type="password"
+          name="password"
           value={data.password}
           onChange={handleChange}
           required
@@ -59,7 +66,11 @@ export function Login() {
           className={`${classes.field} ${classes.formSpacing}`}
         />
         <div className={classes.formSpacing}>
-          <input className={classes.inputRemember} id="remember" type="checkbox" />
+          <input
+            className={classes.inputRemember}
+            id="remember"
+            type="checkbox"
+          />
           <label htmlFor="remember">Remember me</label>
         </div>
         <button type="submit" className={classes.button}>

@@ -11,6 +11,7 @@ function LoginDashboard() {
     <section>
       <div className={classes.container}>
       <div className={classes.titleContainer}>
+        
         <h1 className={classes.titleDashboard}>C I L L E K E 0 1</h1>
         </div>
         <div className={`${classes.borderContainer} ${classes.borderContainerLogin}`}>

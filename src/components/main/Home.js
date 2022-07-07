@@ -7,6 +7,7 @@ import Shop from "../shop/Shop";
 import About from "./About";
 import Schedule from "./Schedule";
 import Main from "./Main";
+import News from "./News";
 import classes from "./Home.module.css";
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/news" element={<News />} />
           <Route path="/login" element={<LoginDashboard />} />
           <Route path="/register" element={<RegisterDashboard />} />
           <Route

@@ -76,6 +76,53 @@
   height: 100%;
   min-height: 25rem;
 }
+.spacing {
+  margin: 2rem 0rem 1rem;
+}
+.clipsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.directionDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.borderOutClip {
+  border: 2px solid #bb9c56;
+  padding: .2rem;
+  width: 70%;
+}
+.borderInClip {
+  border: 2px solid #bb9c56;
+}
+.clips {
+  width: 100%;
+}
+.clipsTitle {
+  margin:  1rem;
+  color: #bb9c56;
+}
+.buttonClips {
+  width: 5.4rem;
+  height: 2rem;
+  background-color: #202F36;
+  border: 3px solid #bb9c56;
+  color: #bb9c56;
+  font-weight: bolder;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+}
+.buttonClips:hover {
+  border: 3px solid #ffd700;
+  color: #ffd700;
+}
+.buttonClips:active {
+  border: 3px solid #bb9c56;
+  color: #202F36;
+  background-color: #bb9c56;
+}
 @media only screen and (max-width: 1115px) {
   .divFlex {
     flex-direction: column;
@@ -110,6 +157,11 @@
   .h2Section {
     font-size: 4.2rem;
   }
- 
+  .clipsDiv {
+    flex-direction: row;
+  }
+  .borderOutClip {
+    width: 90%;
+  }
 
 }

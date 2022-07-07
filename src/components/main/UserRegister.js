@@ -32,7 +32,7 @@ export function UserRegister() {
   };
   return (
     <div>
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={handleSubmit}>
         <h1 className={classes.formH1}>Join us, little Porocornio!</h1>
         <h2 className={`${classes.formSpacingRegister} ${classes.formUserH2}`}>
           Introduce your Twitch email
@@ -40,22 +40,26 @@ export function UserRegister() {
         <input
           id="email"
           type="email"
+          name="email"
           placeholder="Email"
           value={data.email}
           required
           className={`${classes.field} ${classes.formSpacingRegister}`}
+          onChange={handleChange}
         />
         <h2 className={`${classes.formSpacingRegister} ${classes.formUserH2}`}>
           Introduce your password
         </h2>
         <input
           id="password"
+          name="password"
           type="password"
           placeholder="Password"
           value={data.password}
           required
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           className={`${classes.field}`}
+          onChange={handleChange}
         />
         <h5
           className={`${classes.formSpacingRegister} ${classes.formPasswordRequirements}`}

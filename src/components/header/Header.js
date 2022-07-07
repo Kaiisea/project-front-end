@@ -49,6 +49,11 @@ function Header() {
             <Link to="/schedule">Schedule</Link>
           </li>
         )}
+        {logged && (
+          <li>
+            <Link to="/news">News</Link>
+          </li>
+        )}
         {!logged && (
           <li className={classes.navRight}>
             Access

@@ -1,13 +1,17 @@
-import Chatting from "../img/Chatting.jpg";
-import BlackStories from "../img/BlackStories.png";
-import Gartic from "../img/Gartic.png";
-import Guesser from "../img/Guesser.jpg";
+import Chatting from "../img/justChatting.jpg";
+import Gartic from "../img/garticPhone.png";
+import Guesser from "../img/geoGuesser.jpg";
 import lol from "../img/lol.jpg";
-import Nightmares from "../img/Nightmares.jpg";
-import Porrito from "../img/Porrito.png";
-import Quiplash from "../img/Quiplash.jpg";
-import Senua from "../img/Senua.jpg";
-import Valorant from "../img/Valorant.jpeg";
+import Nightmares from "../img/nightmares.jpg";
+import Porrito from "../img/porrito.png";
+import Quiplash from "../img/quiplash.jpg";
+import Senua from "../img/senua.jpg";
+import Valorant from "../img/valorant.jpg";
+import Minecraft from "../img/minecraft.jpg";
+// import Deceit from "../img/deceit.jpg";
+// import fallGuys from "../img/fallGuys.png";
+// import Pinturillo from "../img/pinturillo.jpg";
+// import Unpacking from "../img/npacking.jpg";
 import classes from "./Schedule.module.css"
 
 const Schedule = () => {
@@ -49,7 +53,7 @@ const Schedule = () => {
             <th><img src={Nightmares} className={classes.photosSchedule} />Little<br/> Nightmares</th>
             <th><img src={lol} className={classes.photosSchedule} />League&nbsp;of <br/> Legends</th>
             <th><img src={Guesser} className={classes.photosSchedule} />Geo&nbsp;Guesser<br/>Competition</th>
-            <th><img src={BlackStories} className={classes.photosSchedule} />Black <br/> Stories</th>
+            <th><img src={Porrito} className={classes.photosSchedule} />Porrito <br/> de Clicke</th>
         </tr>
         <tr>
             <th>21:00</th>
@@ -61,11 +65,19 @@ const Schedule = () => {
             <th><img src={Gartic} className={classes.photosSchedule} />Gartic <br/> phone</th>
         </tr>
         <tr>
+            <th>22:00</th>
+            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
+            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
+            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
+            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
+            <th><img src={Minecraft} className={classes.photosSchedule} />Minecraft<h4 className={classes.invisible}>Minecraft</h4></th>
+            <th><img src={Minecraft} className={classes.photosSchedule} />Minecraft<h4 className={classes.invisible}>Minecraft</h4></th>
+        </tr><tr>
             <th>23:00</th>
-            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
-            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
-            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
-            <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
+            <th className={classes.invisible}></th>
+            <th className={classes.invisible}></th>
+            <th className={classes.invisible}></th>
+            <th className={classes.invisible}></th>
             <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
             <th><img src={Chatting} className={classes.photosSchedule} />Farewell Just Chatting</th>
         </tr>
