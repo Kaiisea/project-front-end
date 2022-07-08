@@ -1,6 +1,5 @@
 import React from "react";
 import { Login } from "./Login";
-import { Register } from "./MemberRegister";
 import classes from "./LoginDashboard.module.css";
 import logo from "../img/logo.jpeg";
 import home from "../img/homeIcon.png";
@@ -19,7 +18,7 @@ function LoginDashboard() {
             <Link to="/"><button className={`${classes.formButton} ${classes.formButtonHome}`}><img src={home} className={classes.homeDashboard} /></button></Link>
             <Link to="/register"><button className={classes.formButton}>Register</button></Link>
           </div>
-          <div className={`${classes.formContainer} ${classes.formContainerLogin}`}>
+          <div className={classes.formContainer}>
             <Login />
           </div>
         </div>

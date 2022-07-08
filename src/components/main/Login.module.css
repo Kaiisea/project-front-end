@@ -36,9 +36,11 @@
 .button {
   background-color: #bb9c56;
   border-radius: 1rem;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   padding: 1rem 0.8rem;
   font-weight: bold;
+  font-family: "Six Caps", sans-serif;
+  font-weight: normal;
 }
 .buttonRegister {
   font-family: "Six Caps", sans-serif;
@@ -79,7 +81,7 @@ input:active {
   color: #b39700;
   margin-bottom: 1rem;
   font-size: 0.96rem;
-  height: 3.5rem;
+  height: 3.6rem;
   border: 2px solid #bb9c56;
 }
 .selectForm:hover {
@@ -138,13 +140,21 @@ input:active {
 .h3Spacing {
   margin-top: 1.6rem;
 }
+.photoUpload {
+  color: #bb9c56;
+}
+.photoUpload:hover {
+  border: none;
+}.photoUpload:active {
+  border: none;
+}
 @media only screen and (max-width: 405px) {
   .formH1 {
     font-size: 1.2rem;
     margin: 0rem 0rem 0.8rem;
   }
   .button {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0.6rem 0rem;
   }
   .formUserH2 {
@@ -164,5 +174,34 @@ input:active {
     font-size: 1.6rem;
     font-weight: lighter;
     padding: 0rem 2.4rem;
+  }
+  .doubleInputTwo {
+    width: 10rem;
+  }
+  .doubleInputThree {
+    width: 7rem;
+  }
+  .selectForm {
+    width: 10rem;
+  }
+  .photoUpload {
+    width: 19rem;
+  }
+  .buttonDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .buttonRegister {
+    width:14rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+  .buttonRegistering {
+    width: 14rem;
+    height: 4rem;
+  }
+  .button {
+    height: 4rem;
   }
 }

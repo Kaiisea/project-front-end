@@ -39,41 +39,49 @@ export function MemberRegister() {
   };
   return (
     <div>
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={handleSubmit}>
         <h1 className={classes.formH1}>Join us, little Porocornio!</h1>
         <div className={classes.divDoubleInput}>
           <input
             id="first_name"
             type="first_name"
+            name="first_name"
             placeholder="Name"
             value={data.first_name}
             required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputOne}`}
+            onChange={handleChange}
           />
           <input
             id="last_name"
             type="last_name"
+            name="last_name"
             placeholder="Last name"
             value={data.last_name}
             required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputTwo}`}
+            onChange={handleChange}
           />
         </div>
         <div className={classes.divDoubleInput}>
           <input
             id="twitch_username"
             type="twitch_username"
+            name="twitch_username"
             placeholder="User name"
             value={data.twitch_username}
             required
             className={`${classes.field} ${classes.formSpacingRegister} ${classes.doubleInputThree}`}
+            onChange={handleChange}
           />
           <select
             id="pronouns"
+            typpee="pronouns"
             name="pronouns"
             value={data.pronouns}
             required
             className={classes.selectForm}
+            onChange={handleChange}
           >
             <option value="he" className={classes.initialOptionForm}>
               Choose your pronouns
@@ -111,19 +119,23 @@ export function MemberRegister() {
         <input
           id="phone"
           type="phone"
+          name="phone"
           placeholder="Telephone number"
           value={data.phone}
           required
           className={`${classes.field} ${classes.formSpacingRegister}`}
+          onChange={handleChange}
         />
         <form action="/action_page.php">
           <h3 className={classes.registerH3}>Upload your profile photo</h3>
           <input
-            type="file"
             id="photo"
-            name="filename"
+            type="file"
+            name="photo"
             value={data.photo}
+            className={classes.photoUpload}
             required
+            onChange={handleChange}
           />
         </form>
         <h3 className={`${classes.registerH3} ${classes.h3Spacing}`}>
@@ -133,9 +145,11 @@ export function MemberRegister() {
           <select
             id="birth_day"
             name="birth_day"
+            type="birth_day"
             value={data.birth_day}
             required
             className={classes.birthOption}
+            onChange={handleChange}
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -172,9 +186,11 @@ export function MemberRegister() {
           <select
             id="birth_month"
             name="birth_month"
+            type="birth_month"
             value={data.birth_month}
             required
             className={classes.birthOption}
+            onChange={handleChange}
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -192,9 +208,11 @@ export function MemberRegister() {
           <select
             id="birth_year"
             name="birth_year"
+            type="birth_year"
             value={data.birth_year}
             required
             className={`${classes.birthOption} ${classes.birthOptionYear}`}
+            onChange={handleChange}
           >
             <option value="2008">2008</option>
             <option value="2007">2007</option>

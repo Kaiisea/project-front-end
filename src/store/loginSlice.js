@@ -3,7 +3,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const baseURL = "http://localhost:8000/login";
 
 const defaultData = {
-  data: {},
+  data: {
+    info:[],
+    token:"",
+    verify_token:"",
+  },
   loading: false,
   isLogged: false,
 };

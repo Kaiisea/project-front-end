@@ -7,13 +7,11 @@
   justify-content: center;
   
 }
-
 .formButtonDiv {
   display: flex;
   justify-content: space-between;
   padding-bottom: .2rem;
 }
-
 .formButton {
   background-color: #bb9c56;
   margin: .1rem .2rem .4rem .2rem;
@@ -31,24 +29,22 @@
 .formButton:active {
   background-color: #b39700;
 }
-
 .borderContainer {
   width: 100%;
   max-width: 360px;
-  padding-top: 3px;
   border-radius: 12px;
   margin: 0 auto;
   border: none;
+  margin-top: -3rem;
 }
-
 .borderContainerLogin {
-  height: 42rem;
+  min-height: 42rem;
+  padding: .4rem;
 }
-
 .borderContainerRegister {
-  height: 50.3rem;
+  min-height: 50.4rem;
+  padding: .4rem;
 }
-
 .formContainer {
   width: 100%;
   max-width: 340px;
@@ -59,18 +55,13 @@
   border-radius: 8px;
   box-shadow: 5px 5px 15px 5px rgba(150, 150, 150, 0.15);
 }
-
-.formContainerLogin {
-  height: 36rem;
-}
-
 .formContainerRegister {
-  height: 49rem;
+  min-height: 49rem;
 }
-
 .logoDashboard {
   height: 6rem;
   width: 6rem;
+  margin-top: 5rem;
 }
 .logoDashboardRegister {
   height: 5rem;
@@ -80,7 +71,6 @@
   height: 2rem;
   width: 2rem;
 }
-
 .imgContainer {
   display: flex;
   justify-content: center;
@@ -99,23 +89,38 @@
   margin-top: -5rem;
   margin-bottom: 1rem;
 }
-
 .titleDashboard {
   color: #bb9c56;
   font-family: 'Six Caps', sans-serif;
   font-size: 3rem;
+  margin-top: -6rem;
 }
-
+.titleDashboardRegister {
+  color: #bb9c56;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 3rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
 @media only screen and (min-width: 480px) {
+  .titleDashboard {
+    margin-top: 0rem;
+    font-size: 4rem;
+  }
+  .titleDashboardRegister {
+    margin-top: 0rem;
+    font-size: 4rem;
+  }
   .borderContainer {
     border: 5px solid #bb9c56;
+    margin-top: 0rem;
   }
   .formButton {
-    padding: 1.4rem 4.6rem;
+    padding: 1.4rem 4.3rem;
     margin: .1rem .3rem
   }
   .formButtonHome {
-    padding: .9rem 5.4rem !important; 
+    padding: .9rem 5.3rem !important; 
   }
   .imgContainer {
     margin-top: 1.4rem;
@@ -123,6 +128,7 @@
   .logoDashboard {
     height: 8rem;
     width: 8rem;
+    margin-top: 0;
   }
   .logoDashboardRegister {
     height: 8rem;
@@ -147,5 +153,4 @@
     margin-top: -4rem;
     margin-bottom: -8rem;
   }
-  
 }

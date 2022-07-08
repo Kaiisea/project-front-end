@@ -7,7 +7,11 @@ import Shop from "../shop/Shop";
 import About from "./About";
 import Schedule from "./Schedule";
 import Main from "./Main";
-import News from "./News";
+import News from "../news/News";
+import News1 from "../news/News1";
+// import News2 from "../news/News2";
+// import News3 from "../news/News3";
+// import News4 from "../news/News4";
 import classes from "./Home.module.css";
 
 function Home() {
@@ -20,6 +24,10 @@ function Home() {
           <Route path="/about" element={<About />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news1" element={<News1 />} />
+          {/* <Route path="/news2" element={<News2 />} />
+          <Route path="/news3" element={<News3 />} />
+          <Route path="/news4" element={<News4 />} /> */}
           <Route path="/login" element={<LoginDashboard />} />
           <Route path="/register" element={<RegisterDashboard />} />
           <Route
