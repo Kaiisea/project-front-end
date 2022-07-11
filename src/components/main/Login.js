@@ -48,8 +48,8 @@ export function Login() {
       {!loading && (
         <form className={classes.form} onSubmit={handleSubmit}>
           <h1 className={classes.formH1}>Welcome to Porocornio's Army</h1>
-          <label htmlFor="username" className={classes.label}>
-            Username
+          <label htmlFor="email" className={classes.label}>
+            Email
           </label>
           <input
             id="email"

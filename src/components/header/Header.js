@@ -68,7 +68,7 @@ function Header() {
           </li>
         )}
         {logged && (
-          <li className={classes.navRight}>
+          <li className={`${classes.navRight} ${classes.logOutHover}`}>
             <Link to="/" onClick={handleLogOut}>
               Log out
             </Link>

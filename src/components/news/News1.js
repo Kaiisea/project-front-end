@@ -1,7 +1,7 @@
 import classes from "./News.module.css";
 import { Link } from "react-router-dom";
 
-const News = () => {
+const News1 = () => {
   return (
     <div>
       <div className={classes.divNews}>
@@ -11,7 +11,7 @@ const News = () => {
           </button>
         </Link>
         <h1 className={classes.titleNewsInside}>N E W &nbsp;&nbsp;1</h1>
-        <p className={classes.pNews}>
+        <p className={classes.pNewsInside}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -24,4 +24,4 @@ const News = () => {
     </div>
   );
 };
-export default News;
+export default News1;
