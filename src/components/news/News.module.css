@@ -149,12 +149,13 @@
 }
 .eventBorderOut:hover .label {
   color: #d7b804;
+  margin-top: .8rem;
 }
 .eventBorderOut:hover .eventInvisible {
   color: #bb9c56;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: justify;
-  margin-bottom: 1rem;
+  margin: 0rem 4rem 1rem;
   font-family: "Finlandica", sans-serif;
 }
 .eventForm {
@@ -199,6 +200,7 @@
   font-weight: bold;
   font-family: "Six Caps", sans-serif;
   font-weight: normal;
+  margin: 1rem 0rem;
 }
 button {
   background-color: #202f36;
@@ -210,6 +212,11 @@ button {
 .eventBorderOut:hover .button:active {
   background-color: #b39700;
 }
+.invisibleId {
+  width: 0.00001rem;
+  height: 0.00001rem;
+  background-color: #202f36;
+}
 @media only screen and (min-width: 480px) {
   .newsComputerFlex {
     display: flex;
@@ -218,9 +225,6 @@ button {
   }
   .newsBorderOut {
     width: 40vw;
-  }
-  .eventBorderOut:hover .eventInvisible {
-   font-size: 1.4rem;
   }
   .label {
     font-size: 1.6rem;
