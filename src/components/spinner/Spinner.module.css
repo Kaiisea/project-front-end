@@ -1,3 +1,7 @@
+.centerSpinner {
+  display: flex;
+  justify-content: center;
+}
 .ldsHourglass {
     display: inline-block;
     position: relative;

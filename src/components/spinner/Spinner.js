@@ -1,10 +1,10 @@
-import styles from "./Spinner.module.css";
+import classes from "./Spinner.module.css";
 
 function Spinner() {
   return (
-    <>
-      <div className={styles.ldsHourglass}></div>
-    </>
+    <div className={classes.centerSpinner}>
+      <div className={classes.ldsHourglass}></div>
+    </div>
   );
 }
 

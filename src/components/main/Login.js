@@ -9,7 +9,6 @@ import Alert from "../alert/Alert";
 export function Login() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.login.login.data);
-  console.log(user);
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const error = useSelector((state) => state.login.error);
@@ -41,10 +40,10 @@ export function Login() {
       )}
       {status === "succeeded" &&
         user.status === "succeeded" &&
-        user.data.info.role !== 0 && <Navigate to="/schedule" replace={true} />}
+        user.data.info.role !== 0 && <Navigate to="/news" replace={true} />}
       {status === "succeeded" &&
         user.status === "succeeded" &&
-        user.data.info.role === 0 && <Navigate to="/news" replace={true} />}
+        user.data.info.role === 0 && <Navigate to="/admin-dashboard" replace={true} />}
       {!loading && (
         <form className={classes.form} onSubmit={handleSubmit}>
           <h1 className={classes.formH1}>Welcome to Porocornio's Army</h1>

@@ -123,3 +123,7 @@
   background-color: #bb9c56;
   color: #202f36;
 }
+.liHover:hover a {
+  color: #ffd700;
+  font-size:1.4rem;
+}

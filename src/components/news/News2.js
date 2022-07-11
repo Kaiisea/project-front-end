@@ -10,15 +10,18 @@ const News2 = () => {
             <div className={classes.borderButton}>Back</div>
           </button>
         </Link>
-        <h1 className={classes.titleNewsInside}>N E W &nbsp;&nbsp;2</h1>
+        <h1 className={classes.titleNewsInside}>
+          Y O U T U B E &nbsp;C H A N N E L &nbsp;C O M I N G &nbsp;S O O N
+        </h1>
         <p className={classes.pNewsInside}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Porocornios, just for having registered on the official website of our
+          king Cilleke01, you are going to find out before anyone else that we
+          are going to create a <a href="https://www.youtube.com/user/cilleke01">Youtube account</a>. Didn't you have enough Cilleke
+          with the one you have in the live shows? Well, we are going to bring
+          you unique videos on this channel, to which you will have access
+          before the rest of the followers of the channel. Videos of vegan
+          recipes, travel vlogs and much more coming soon. Do you want to see
+          them already?
         </p>
       </div>
     </div>

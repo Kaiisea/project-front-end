@@ -13,11 +13,26 @@ import Minecraft from "../img/minecraft.jpg";
 // import Pinturillo from "../img/pinturillo.jpg";
 // import Unpacking from "../img/npacking.jpg";
 import classes from "./Schedule.module.css";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewUser, signIn } from "../../store/loginSlice";
 
 const Schedule = () => {
+  const [data, setData] = useState([]);
+  
+  const getData = () => {
+    fetch("127.0.0.1:8000/schedule")
+      .then((res) => res.json())
+      .then((json) => {
+      console.log(json);
+      setData(json);
+      });
+    }
+
   return (
     <div className={classes.divCenter}>
-      <h1>Week 2 of July</h1>
+      <h1 onClick={getData}>Week 2 of July</h1>
+      {data.map((item) => (
       <table>
         <tbody>
           <tr>
@@ -31,9 +46,9 @@ const Schedule = () => {
           </tr>
           <tr>
             <th className={classes.thWidth}>&nbsp;18:30&nbsp;</th>
-            <th>
+            <th key={item.id}>
               <img src={Chatting} className={classes.photosSchedule} />
-              Organizing <br /> the week
+              {item.status.data.event}
             </th>
             <th>
               <img src={Chatting} className={classes.photosSchedule} />
@@ -184,7 +199,8 @@ const Schedule = () => {
           </tr>
         </tbody>
       </table>
+      ))}
     </div>
   );
-};
+}
 export default Schedule;

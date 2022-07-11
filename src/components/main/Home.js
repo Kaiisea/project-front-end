@@ -13,6 +13,7 @@ import News2 from "../news/News2";
 import News3 from "../news/News3";
 import News4 from "../news/News4";
 import Event from "../news/Event";
+import AdminDashboard from "../adminDashboard/AdminDashboard";
 import classes from "./Home.module.css";
 
 function Home() {
@@ -30,6 +31,7 @@ function Home() {
           <Route path="/news3" element={<News3 />} />
           <Route path="/news4" element={<News4 />} />
           <Route path="/event" element={<Event />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/login" element={<LoginDashboard />} />
           <Route path="/register" element={<RegisterDashboard />} />
           <Route

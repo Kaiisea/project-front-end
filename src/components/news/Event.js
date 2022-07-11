@@ -32,9 +32,9 @@ const Event = () => {
     });
   };
   return (
-    <div className={classes.newsFlex}>
+    <div className={`$${classes.newsFlex} ${classes.justCenter}`}>
       <h1 className={classes.mainTitle}>E V E N T S</h1>
-      <div className={classes.eventBorderOut}>
+      <div className={`${classes.eventBorderOut} ${classes.justCenter}`}>
         <div className={classes.eventBorderIn}>
           <h1 className={classes.eventH1}>Minecraft Server</h1>
           <p className={classes.eventInvisible}>
@@ -69,7 +69,7 @@ const Event = () => {
           </form>
         </div>
       </div>
-      <div className={classes.eventBorderOut}>
+      <div className={`${classes.eventBorderOut} ${classes.justCenter}`}>
         <div className={classes.eventBorderIn}>
           <h1 className={classes.eventH1}>Extensible streaming</h1>
           <p className={classes.eventInvisible}>
@@ -103,7 +103,7 @@ const Event = () => {
           </form>
         </div>
       </div>
-      <div className={classes.eventBorderOut}>
+      <div className={`${classes.eventBorderOut} ${classes.justCenter}`}>
         <div className={classes.eventBorderIn}>
           <h1 className={classes.eventH1}>Special 1000 followers</h1>
           <p className={classes.eventInvisible}>
@@ -135,7 +135,7 @@ const Event = () => {
           </form>
         </div>
       </div>
-      <div className={classes.eventBorderOut}>
+      <div className={`${classes.eventBorderOut} ${classes.justCenter}`}>
         <div className={classes.eventBorderIn}>
           <h1 className={classes.eventH1}>Happy Birthday Cille!</h1>
           <p className={classes.eventInvisible}>

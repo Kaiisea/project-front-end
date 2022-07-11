@@ -9,6 +9,7 @@ import Twitch from "../img/TwitchCircle.png";
 
 function Header() {
   const logged = useSelector((state) => state.login.login.isLogged);
+  const user = useSelector((state) => state.login.login.data);
   const dispatch = useDispatch();
   const handleLogOut = () => {
     dispatch(loginActions.logOut());
@@ -21,37 +22,44 @@ function Header() {
             <img src={logo} className={classes.logoHeader} />
           </Link>
         </li>
-        {!logged && (<div className={classes.socialDiv}>
-        <div className={classes.socialBorder}>
-        <li>
-          <a href="https://www.instagram.com/christiian4/">
-            <img src={Instagram} className={classes.logoSocialMedia} />
-          </a>
-        </li>
-        </div>
-        <div className={classes.socialBorder}>
-        <li>
-          <a href="https://www.twitter.com/Cilleke_/">
-            <img src={Twitter} className={classes.logoSocialMedia} />
-          </a>
-        </li>
-        </div>
-        <div className={classes.socialBorder}>
-        <li>
-          <a href="https://www.twitch.tv/cilleke01">
-            <img src={Twitch} className={classes.logoSocialMedia} />
-          </a>
-        </li>
-        </div>
-        </div>)}
+        {!logged && (
+          <div className={classes.socialDiv}>
+            <div className={classes.socialBorder}>
+              <li>
+                <a href="https://www.instagram.com/christiian4/">
+                  <img src={Instagram} className={classes.logoSocialMedia} />
+                </a>
+              </li>
+            </div>
+            <div className={classes.socialBorder}>
+              <li>
+                <a href="https://www.twitter.com/Cilleke_/">
+                  <img src={Twitter} className={classes.logoSocialMedia} />
+                </a>
+              </li>
+            </div>
+            <div className={classes.socialBorder}>
+              <li>
+                <a href="https://www.twitch.tv/cilleke01">
+                  <img src={Twitch} className={classes.logoSocialMedia} />
+                </a>
+              </li>
+            </div>
+          </div>
+        )}
         {logged && (
-          <li>
+          <li className={classes.liHover}>
             <Link to="/schedule">Schedule</Link>
           </li>
         )}
         {logged && (
-          <li>
+          <li className={classes.liHover}>
             <Link to="/news">News</Link>
+          </li>
+        )}
+        {logged && user.data.info.role === 0 && (
+          <li className={classes.liHover}>
+            <Link to="/admin-dashboard">Admin Dashboard</Link>
           </li>
         )}
         {!logged && (

@@ -34,14 +34,14 @@
 .titleNews {
   color: #bb9c56;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2.6rem;
   font-family: "Edu QLD Beginner", cursive;
   margin-bottom: 0.8rem;
 }
 .titleNewsInside {
   color: #bb9c56;
   font-weight: bold;
-  margin-top: -3rem;
+  margin-top: -2rem;
   font-size: 3.4rem;
   font-family: "Six Caps", sans-serif;
   margin-bottom: 2rem;
@@ -49,15 +49,16 @@
 .pNews {
   color: #bb9c56;
   font-family: "Finlandica", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  margin: .88rem;
   text-align: justify;
 }
 .pNewsInside {
   color: #bb9c56;
   font-family: "Finlandica", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: justify;
-  margin: 0rem 3rem;
+  margin: 0rem 3rem 2rem;
 }
 .newsButton {
   padding: 0.3rem 0.2rem;
@@ -104,7 +105,16 @@
   flex-direction: column;
   text-align: center;
 }
+.pNewsInside a {
+  color: #ffd700;
+}
 /* events */
+.justCenter {
+  text-align: center;
+  justify-content: center;
+  justify-items: center !important;
+  margin: 0 auto;
+}
 .eventBorderOut {
   border: 2px solid #bb9c56;
   padding: .4rem;
@@ -165,7 +175,7 @@
   background-color: #202f36;
   padding: 0;
   margin: -1rem 0rem;
-  max-width: 30rem;
+  color: #202f36;
 }
 ::placeholder {
   color: #202f36;
@@ -217,9 +227,18 @@ button {
   }
   .buttonDiv {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .eventBorderOut:hover .field {
+    margin: 0 auto;
   }
   .eventBorderOut:hover .button {
     font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 702px) {
+  .newsBorderOut {
+    width: 100% !important;
   }
 }
