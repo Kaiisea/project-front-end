@@ -212,11 +212,6 @@ button {
 .eventBorderOut:hover .button:active {
   background-color: #b39700;
 }
-.invisibleId {
-  width: 0.00001rem;
-  height: 0.00001rem;
-  background-color: #202f36;
-}
 @media only screen and (min-width: 480px) {
   .newsComputerFlex {
     display: flex;

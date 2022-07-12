@@ -2,7 +2,9 @@ import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewUser, signIn } from "../../store/loginSlice";
+import { addNewMember } from "../../store/loginSlice";
+import Spinner from "../spinner/Spinner";
+import { Navigate } from "react-router-dom"
 
 export function MemberRegister() {
   const dispatch = useDispatch();
@@ -16,17 +18,22 @@ export function MemberRegister() {
     twitch_username: "",
     pronouns: "",
     phone: "",
-    photo: "",
     birth_day: "",
     birth_month: "",
     birth_year: "",
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addNewUser(data)).then(() => {
+    dispatch(addNewMember(data)).then(() => {
       setData({
-        email: "",
-        password: "",
+        first_name: "",
+        last_name: "",
+        twitch_username: "",
+        pronouns: "",
+        phone: "",
+        birth_day: "",
+        birth_month: "",
+        birth_year: "",
       });
     });
   };
@@ -39,6 +46,8 @@ export function MemberRegister() {
   };
   return (
     <div>
+      {loading && <Spinner />}
+      {status === "succeeded" && <Navigate to="/login" replace={true} />}
       <form className={classes.form} onSubmit={handleSubmit}>
         <h1 className={classes.formH1}>Join us, little Porocornio!</h1>
         <div className={classes.divDoubleInput}>
@@ -126,18 +135,6 @@ export function MemberRegister() {
           className={`${classes.field} ${classes.formSpacingRegister}`}
           onChange={handleChange}
         />
-        <form action="/action_page.php">
-          <h3 className={classes.registerH3}>Upload your profile photo</h3>
-          <input
-            id="photo"
-            type="file"
-            name="photo"
-            value={data.photo}
-            className={classes.photoUpload}
-            required
-            onChange={handleChange}
-          />
-        </form>
         <h3 className={`${classes.registerH3} ${classes.h3Spacing}`}>
           Choose your birth date
         </h3>
@@ -276,25 +273,22 @@ export function MemberRegister() {
           </select>
         </div>
         <div className={classes.buttonDiv}>
-        <Link to="/login">
+          <Link to="/login">
+            <button
+              type="submit"
+              className={`${classes.button} ${classes.buttonRegister}`}
+            >
+              B A C K &nbsp;T O &nbsp;L O G I N
+            </button>
+          </Link>
           <button
             type="submit"
-            className={`${classes.button} ${classes.buttonRegister}`}
+            className={`${classes.button} ${classes.buttonRegistering}`}
           >
-            B A C K &nbsp;T O &nbsp;L O G I N
+            R E G I S T E R
           </button>
-        </Link>
-        <button
-          type="submit"
-          className={`${classes.button} ${classes.buttonRegistering}`}
-        >
-          R E G I S T E R
-        </button>
         </div>
       </form>
     </div>
   );
-  // Component.propTypes = {
-  //     first_name: PropTypes.string.isRequired
-  // }
 }

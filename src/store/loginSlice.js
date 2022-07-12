@@ -31,6 +31,24 @@ export const addNewUser = createAsyncThunk(
   }
 );
 
+export const addNewMember = createAsyncThunk(
+  "login/addNewMember",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await fetch("http://localhost:8000/members", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.json();
+    } catch (error) {
+      return rejectWithValue("Failed to fetch, trying to register a new user");
+    }
+  }
+);
+
 export const signIn = createAsyncThunk(
   "login/signIn",
   async (data, { rejectWithValue }) => {
@@ -70,7 +88,7 @@ export const getEvents = createAsyncThunk(
   "login/getEvents",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/event", {
+      const response = await fetch("http://localhost:8000/event", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -83,11 +101,11 @@ export const getEvents = createAsyncThunk(
   }
 );
 
-export const postSchedule = createAsyncThunk(
-  "login/postSchedule",
+export const registrateParticipation = createAsyncThunk(
+  "login/registrateParticipation",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:8000/schedule" + "/new", {
+      const response = await fetch("http://localhost:8000/events", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -120,6 +138,20 @@ export const loginSlice = createSlice({
       state.status = "succeeded";
     },
     [addNewUser.rejected]: (state, action) => {
+      state.login.loading = false;
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [addNewMember.pending]: (state) => {
+      state.login.loading = true;
+      state.status = "loading";
+    },
+    [addNewMember.fulfilled]: (state, action) => {
+      state.login.data = action.payload;
+      state.login.loading = false;
+      state.status = "succeeded";
+    },
+    [addNewMember.rejected]: (state, action) => {
       state.login.loading = false;
       state.status = "rejected";
       state.error = action.payload;
@@ -167,16 +199,16 @@ export const loginSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
-    [postSchedule.pending]: (state) => {
+    [registrateParticipation.pending]: (state) => {
       state.login.loading = true;
       state.status = "loading";
     },
-    [postSchedule.fulfilled]: (state, action) => {
+    [registrateParticipation.fulfilled]: (state, action) => {
       state.login.data = action.payload;
       state.login.loading = false;
       state.status = "succeeded";
     },
-    [postSchedule.rejected]: (state, action) => {
+    [registrateParticipation.rejected]: (state, action) => {
       state.login.loading = false;
       state.status = "rejected";
       state.error = action.payload;

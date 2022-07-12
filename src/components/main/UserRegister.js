@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewUser, signIn } from "../../store/loginSlice";
+import Spinner from "../spinner/Spinner";
+import { Navigate } from "react-router-dom";
 
 export function UserRegister() {
   const dispatch = useDispatch();
@@ -32,6 +34,8 @@ export function UserRegister() {
   };
   return (
     <div>
+      {loading && <Spinner />}
+      {status === "succeeded" && <Navigate to="/register-member" replace={true} />}
       <form className={classes.form} onSubmit={handleSubmit}>
         <h1 className={classes.formH1}>Join us, little Porocornio!</h1>
         <h2 className={`${classes.formSpacingRegister} ${classes.formUserH2}`}>
@@ -73,9 +77,9 @@ export function UserRegister() {
           </button></Link>
         </div>
         <div className={classes.buttonDivRegister}>
-        <Link to="/register-member"><button type="submit" className={`${classes.button} ${classes.buttonRegister}`}>
+        <button type="submit" className={`${classes.button} ${classes.buttonRegister}`}>
             C o n t i n u e &nbsp;&nbsp;&nbsp;r e g i s t e r i n g
-          </button></Link>
+          </button>
         </div>
       </form>
     </div>

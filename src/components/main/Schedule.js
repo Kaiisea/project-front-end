@@ -2,10 +2,12 @@ import classes from "./Schedule.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSchedule } from "../../store/loginSlice";
+import Row from "./Row";
 
 const Schedule = () => {
   const [allEvents, setAllEvents] = useState([]);
   const [dateToShow, setDateToShow] = useState({
+    counter: 1,
     day: "",
     dayOfMonth: "",
     month: "",
@@ -26,7 +28,8 @@ const Schedule = () => {
           month: date.getMonth() + 1,
           maxMonth: date.getMonth() + 1,
         });
-        let filteredEvents = schedule.filter(
+        // console.log(result.payload.data);
+        let filteredEvents = result.payload.data.filter(
           (savedEvent) =>
             savedEvent.day >= dateToShow.dayOfMonth &&
             savedEvent.day <= dateToShow.maxDayOfMonth &&
@@ -42,18 +45,20 @@ const Schedule = () => {
         let orderedEventsByMonth = orderedEventsByday.sort(
           (a, b) => a.month - b.month
         );
-        // let groupedEvents = orderedEventsByMonth.forEach(element => {
-          
-        // });((savedEvent)=>{
+        let organicedEvents = [];
+        orderedEventsByMonth.forEach((element) => {
+          organicedEvents[element.day] = [...organicedEvents, element];
+        });
 
-        // })
+        console.log(organicedEvents);
         setAllEvents(orderedEventsByMonth);
       })
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
-    console.log(allEvents);
+    // console.log(allEvents);
+    // console.log(dateToShow);
   }, [allEvents]);
   return (
     <div className={classes.divCenter}>
@@ -76,117 +81,122 @@ const Schedule = () => {
           </tr>
         </thead>
         <tbody>
+          {allEvents.map((savedEvent, index) => {
+            // console.log("working");
+            return <Row fullEvent={savedEvent} dateInfo={dateToShow} />;
+          })}
+
           {/* {data.map((item) => (
           <tr>
-            <th className={classes.thWidth}>&nbsp;18:30&nbsp;</th>
-            <th key={item.id}>
+            <td className={classes.thWidth}>&nbsp;18:30&nbsp;</td>
+            <td key={item.id}>
               <img src={Chatting} className={classes.photosSchedule} />
               {item.status.data.event}
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Chatting} className={classes.photosSchedule} />
               Just <br /> Chatting
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Chatting} className={classes.photosSchedule} />
               Just <br /> Chatting
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Chatting} className={classes.photosSchedule} />
               Just <br /> Chatting
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Chatting} className={classes.photosSchedule} />
               Just <br /> Chatting
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Chatting} className={classes.photosSchedule} />
               Just <br /> Chatting
-            </th>
+            </td>
           </tr>
           <tr>
-            <th>19:30</th>
-            <th>
+            <td>19:30</td>
+            <td>
               <img src={Guesser} className={classes.photosSchedule} />
               &nbsp;Geo&nbsp;Guesser&nbsp; <br /> Daily
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Guesser} className={classes.photosSchedule} />
               &nbsp;Geo&nbsp;Guesser&nbsp; <br /> Daily
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Guesser} className={classes.photosSchedule} />
               &nbsp;Geo&nbsp;Guesser&nbsp; <br /> Daily
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Guesser} className={classes.photosSchedule} />
               &nbsp;Geo&nbsp;Guesser&nbsp; <br /> Daily
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Guesser} className={classes.photosSchedule} />
               &nbsp;Geo&nbsp;Guesser&nbsp; <br /> Daily
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Porrito} className={classes.photosSchedule} />
               Porrito <br /> de Clicke
-            </th>
+            </td>
           </tr>
           <tr>
-            <th>20:00</th>
-            <th>
+            <td>20:00</td>
+            <td>
               <img src={Senua} className={classes.photosSchedule} />
               Senua's <br /> Sacrifice
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Valorant} className={classes.photosSchedule} />
               Valorant <h4 className={classes.invisible}>Valorant</h4>
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Nightmares} className={classes.photosSchedule} />
               Little
               <br /> Nightmares
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={lol} className={classes.photosSchedule} />
               League&nbsp;of <br /> Legends
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Guesser} className={classes.photosSchedule} />
               Geo&nbsp;Guesser
               <br />
               Competition
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Porrito} className={classes.photosSchedule} />
               Porrito <br /> de Clicke
-            </th>
+            </td>
           </tr>
           <tr>
-            <th>21:00</th>
-            <th>
+            <td>21:00</td>
+            <td>
               <img src={Senua} className={classes.photosSchedule} />
               Senua's <br /> Sacrifice
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Valorant} className={classes.photosSchedule} />
               Valorant <h4 className={classes.invisible}>Valorant</h4>
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Nightmares} className={classes.photosSchedule} />
               Little <br /> Nightmares
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={lol} className={classes.photosSchedule} />
               League&nbsp;of <br /> Legends
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Quiplash} className={classes.photosSchedule} />
               Quiplash <h4 className={classes.invisible}>Quiplash</h4>
-            </th>
-            <th>
+            </td>
+            <td>
               <img src={Gartic} className={classes.photosSchedule} />
               Gartic <br /> phone
-            </th>
+            </td>
           </tr>
           <tr>
             <th>22:00</th>

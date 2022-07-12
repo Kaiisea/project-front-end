@@ -1,21 +1,25 @@
 import classes from "./News.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewUser, signIn } from "../../store/loginSlice";
+import { registrateParticipation } from "../../store/loginSlice";
+import Spinner from "../spinner/Spinner";
 
 const Event = () => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.login.login.data);
+  const loading = useSelector((state) => state.login.login.loading);
+  const status = useSelector((state) => state.login.status);
+  const error = useSelector((state) => state.login.error);
   const [data, setData] = useState({
     twitch_username: "",
     email: "",
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addNewUser(data)).then(() => {
+    dispatch(registrateParticipation(data)).then(() => {
       setData({
         twitch_username: "",
         email: "",
-        formId: "",
       });
     });
   };
@@ -27,7 +31,8 @@ const Event = () => {
     });
   };
   return (
-    <div className={`$${classes.newsFlex} ${classes.justCenter}`}>
+    <div className={`${classes.newsFlex} ${classes.justCenter}`}>
+      {loading && <Spinner />}
       <h1 className={classes.mainTitle}>E V E N T S</h1>
       <div className={`${classes.eventBorderOut} ${classes.justCenter}`}>
         <div className={classes.eventBorderIn}>
@@ -69,14 +74,6 @@ const Event = () => {
               required
               className={`${classes.field} ${classes.formSpacing}`}
             />
-          <input
-            id="formId"
-            type="formId"
-            name="formId"
-            value={data.minecraft}
-            required
-            className={classes.invisibleId}
-          />
             <div className={classes.buttonDiv}>
               <button type="submit" className={classes.button}>
                 P A R T I C I P A T E
@@ -98,18 +95,18 @@ const Event = () => {
             are you waiting for?
           </p>
           <label htmlFor="twitch_username" className={classes.label}>
-              Enter your username to participate
-            </label>
-            <input
-              id="twitch_username"
-              type="twitch_username"
-              name="twitch_username"
-              placeholder="Enter your username"
-              value={data.twitch_username}
-              onChange={handleChange}
-              required
-              className={`${classes.field} ${classes.formSpacing}`}
-            />
+            Enter your username to participate
+          </label>
+          <input
+            id="twitch_username"
+            type="twitch_username"
+            name="twitch_username"
+            placeholder="Enter your username"
+            value={data.twitch_username}
+            onChange={handleChange}
+            required
+            className={`${classes.field} ${classes.formSpacing}`}
+          />
           <form className={classes.eventForm} onSubmit={handleSubmit}>
             <label htmlFor="email" className={classes.label}>
               Enter your email to participate
@@ -124,14 +121,6 @@ const Event = () => {
               required
               className={`${classes.field} ${classes.formSpacing}`}
             />
-            <input
-            id="formId"
-            type="formId"
-            name="formId"
-            value={data.extensible}
-            required
-            className={classes.invisibleId}
-          />
             <div className={classes.buttonDiv}>
               <button type="submit" className={classes.button}>
                 P A R T I C I P A T E
@@ -151,7 +140,7 @@ const Event = () => {
             the lucky one?
           </p>
           <form className={classes.eventForm} onSubmit={handleSubmit}>
-          <label htmlFor="twitch_username" className={classes.label}>
+            <label htmlFor="twitch_username" className={classes.label}>
               Enter your username to participate
             </label>
             <input
@@ -177,14 +166,6 @@ const Event = () => {
               required
               className={`${classes.field} ${classes.formSpacing}`}
             />
-            <input
-            id="formId"
-            type="formId"
-            name="formId"
-            value={data.special}
-            required
-            className={classes.invisibleId}
-          />
             <div className={classes.buttonDiv}>
               <button type="submit" className={classes.button}>
                 P A R T I C I P A T E
@@ -203,7 +184,7 @@ const Event = () => {
             to celebrate it? Then join the biggest birthday party right now!
           </p>
           <form className={classes.eventForm} onSubmit={handleSubmit}>
-          <label htmlFor="twitch_username" className={classes.label}>
+            <label htmlFor="twitch_username" className={classes.label}>
               Enter your username to participate
             </label>
             <input
@@ -229,14 +210,6 @@ const Event = () => {
               required
               className={`${classes.field} ${classes.formSpacing}`}
             />
-            <input
-            id="formId"
-            type="formId"
-            name="formId"
-            value={data.birthday}
-            required
-            className={classes.invisibleId}
-          />
             <div className={classes.buttonDiv}>
               <button type="submit" className={classes.button}>
                 P A R T I C I P A T E

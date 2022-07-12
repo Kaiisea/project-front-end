@@ -64,7 +64,7 @@ function Header() {
         )}
         {logged && user.data.info.role === 0 && (
           <li className={classes.liHover}>
-            <Link to="/admin-dashboard">Admin Dashboard</Link>
+            <Link to="/admin-dashboard">Admin</Link>
           </li>
         )}
         {!logged && (
