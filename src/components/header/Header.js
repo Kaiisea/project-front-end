@@ -57,6 +57,11 @@ function Header() {
             <Link to="/news">News</Link>
           </li>
         )}
+        {logged && (
+          <li className={classes.liHover}>
+            <Link to="/event">Events</Link>
+          </li>
+        )}
         {logged && user.data.info.role === 0 && (
           <li className={classes.liHover}>
             <Link to="/admin-dashboard">Admin Dashboard</Link>

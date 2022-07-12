@@ -1,49 +1,82 @@
-import Chatting from "../img/justChatting.jpg";
-import Gartic from "../img/garticPhone.png";
-import Guesser from "../img/geoGuesser.jpg";
-import lol from "../img/lol.jpg";
-import Nightmares from "../img/nightmares.jpg";
-import Porrito from "../img/porrito.png";
-import Quiplash from "../img/quiplash.jpg";
-import Senua from "../img/senua.jpg";
-import Valorant from "../img/valorant.jpg";
-import Minecraft from "../img/minecraft.jpg";
-// import Deceit from "../img/deceit.jpg";
-// import fallGuys from "../img/fallGuys.png";
-// import Pinturillo from "../img/pinturillo.jpg";
-// import Unpacking from "../img/npacking.jpg";
 import classes from "./Schedule.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewUser, signIn } from "../../store/loginSlice";
+import { getSchedule } from "../../store/loginSlice";
 
 const Schedule = () => {
-  const [data, setData] = useState([]);
-  
-  const getData = () => {
-    fetch("127.0.0.1:8000/schedule")
-      .then((res) => res.json())
-      .then((json) => {
-      console.log(json);
-      setData(json);
-      });
-    }
+  const [allEvents, setAllEvents] = useState([]);
+  const [dateToShow, setDateToShow] = useState({
+    day: "",
+    dayOfMonth: "",
+    month: "",
+    maxDayOfMonth: "",
+    maxMonth: "",
+  });
+  const dispatch = useDispatch();
+  const schedule = useSelector((state) => state.login.login.data.info.data);
+  // console.log(schedule);
+  useEffect(() => {
+    dispatch(getSchedule())
+      .then((result) => {
+        let date = new Date();
+        setDateToShow({
+          day: date.getDay(),
+          dayOfMonth: date.getDate(),
+          maxDayOfMonth: date.getDate() + 7,
+          month: date.getMonth() + 1,
+          maxMonth: date.getMonth() + 1,
+        });
+        let filteredEvents = schedule.filter(
+          (savedEvent) =>
+            savedEvent.day >= dateToShow.dayOfMonth &&
+            savedEvent.day <= dateToShow.maxDayOfMonth &&
+            savedEvent.month >= dateToShow.month &&
+            savedEvent.month <= dateToShow.maxMonth
+        );
+        let orderedEventsByHour = filteredEvents.sort(
+          (a, b) => a.hour - b.hour
+        );
+        let orderedEventsByday = orderedEventsByHour.sort(
+          (a, b) => a.day - b.day
+        );
+        let orderedEventsByMonth = orderedEventsByday.sort(
+          (a, b) => a.month - b.month
+        );
+        // let groupedEvents = orderedEventsByMonth.forEach(element => {
+          
+        // });((savedEvent)=>{
 
+        // })
+        setAllEvents(orderedEventsByMonth);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    console.log(allEvents);
+  }, [allEvents]);
   return (
     <div className={classes.divCenter}>
-      <h1 onClick={getData}>Week 2 of July</h1>
-      {data.map((item) => (
+      <h1>Week 2 of July</h1>
+      {/* <img
+        src="http://localhost:8000/lol.jpg"
+        alt="lol"
+        className={classes.photosSchedule}
+      /> */}
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <th>Hora</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
+            <th>Day</th>
+            <th>18:30</th>
+            <th>19:30</th>
+            <th>20:00</th>
+            <th>21:00</th>
+            <th>22:00</th>
+            <th>23:00</th>
           </tr>
+        </thead>
+        <tbody>
+          {/* {data.map((item) => (
           <tr>
             <th className={classes.thWidth}>&nbsp;18:30&nbsp;</th>
             <th key={item.id}>
@@ -197,10 +230,10 @@ const Schedule = () => {
               Farewell Just Chatting
             </th>
           </tr>
+        ))} */}
         </tbody>
       </table>
-      ))}
     </div>
   );
-}
+};
 export default Schedule;

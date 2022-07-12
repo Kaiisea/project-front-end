@@ -2,7 +2,6 @@ import classes from "./Main.module.css";
 import Profile from "../img/profile.jpg";
 import Trailer from "../video/Trailer.mp4";
 import Logo2 from "../img/logoArcoiris.png";
-import "react-slideshow-image/dist/styles.css"
 
 const Main = () => {
   return (
