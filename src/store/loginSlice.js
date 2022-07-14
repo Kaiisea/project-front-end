@@ -101,11 +101,66 @@ export const getEvents = createAsyncThunk(
   }
 );
 
-export const registrateParticipation = createAsyncThunk(
-  "login/registrateParticipation",
+//Events
+export const addMinecraftParticipation = createAsyncThunk(
+  "login/addMinecraftParticipation",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:8000/events", {
+      const response = await fetch("http://localhost:8000/minecraftevent", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.json();
+    } catch (error) {
+      return rejectWithValue("Failed to fetch, trying to register a new user");
+    }
+  }
+);
+
+export const addExtensibleParticipation = createAsyncThunk(
+  "login/addExtensibleParticipation",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await fetch("http://localhost:8000/extensibleevent", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.json();
+    } catch (error) {
+      return rejectWithValue("Failed to fetch, trying to register a new user");
+    }
+  }
+);
+
+export const addSpecialParticipation = createAsyncThunk(
+  "login/addSpecialParticipation",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await fetch("http://localhost:8000/specialevent", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.json();
+    } catch (error) {
+      return rejectWithValue("Failed to fetch, trying to register a new user");
+    }
+  }
+);
+
+export const addBirthdayParticipation = createAsyncThunk(
+  "login/addBirthdayParticipation",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await fetch("http://localhost:8000/birthdayevent", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -199,16 +254,58 @@ export const loginSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
-    [registrateParticipation.pending]: (state) => {
+    [addMinecraftParticipation.pending]: (state) => {
       state.login.loading = true;
       state.status = "loading";
     },
-    [registrateParticipation.fulfilled]: (state, action) => {
+    [addMinecraftParticipation.fulfilled]: (state, action) => {
       state.login.data = action.payload;
       state.login.loading = false;
       state.status = "succeeded";
     },
-    [registrateParticipation.rejected]: (state, action) => {
+    [addMinecraftParticipation.rejected]: (state, action) => {
+      state.login.loading = false;
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [addExtensibleParticipation.pending]: (state) => {
+      state.login.loading = true;
+      state.status = "loading";
+    },
+    [addExtensibleParticipation.fulfilled]: (state, action) => {
+      state.login.data = action.payload;
+      state.login.loading = false;
+      state.status = "succeeded";
+    },
+    [addExtensibleParticipation.rejected]: (state, action) => {
+      state.login.loading = false;
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [addSpecialParticipation.pending]: (state) => {
+      state.login.loading = true;
+      state.status = "loading";
+    },
+    [addSpecialParticipation.fulfilled]: (state, action) => {
+      state.login.data = action.payload;
+      state.login.loading = false;
+      state.status = "succeeded";
+    },
+    [addSpecialParticipation.rejected]: (state, action) => {
+      state.login.loading = false;
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [addBirthdayParticipation.pending]: (state) => {
+      state.login.loading = true;
+      state.status = "loading";
+    },
+    [addBirthdayParticipation.fulfilled]: (state, action) => {
+      state.login.data = action.payload;
+      state.login.loading = false;
+      state.status = "succeeded";
+    },
+    [addBirthdayParticipation.rejected]: (state, action) => {
       state.login.loading = false;
       state.status = "rejected";
       state.error = action.payload;

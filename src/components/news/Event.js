@@ -1,7 +1,7 @@
 import classes from "./News.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registrateParticipation } from "../../store/loginSlice";
+import { addMinecraftParticipation, addExtensibleParticipation, addSpecialParticipation, addBirthdayParticipation } from "../../store/loginSlice";
 import Spinner from "../spinner/Spinner";
 
 const Event = () => {
@@ -14,9 +14,36 @@ const Event = () => {
     twitch_username: "",
     email: "",
   });
-  const handleSubmit = (event) => {
+  const handleSubmitMinecraft = (event) => {
     event.preventDefault();
-    dispatch(registrateParticipation(data)).then(() => {
+    dispatch(addMinecraftParticipation(data)).then(() => {
+      setData({
+        twitch_username: "",
+        email: "",
+      });
+    });
+  };
+  const handleSubmitExtensible = (event) => {
+    event.preventDefault();
+    dispatch(addExtensibleParticipation(data)).then(() => {
+      setData({
+        twitch_username: "",
+        email: "",
+      });
+    });
+  };
+  const handleSubmitSpecial = (event) => {
+    event.preventDefault();
+    dispatch(addSpecialParticipation(data)).then(() => {
+      setData({
+        twitch_username: "",
+        email: "",
+      });
+    });
+  };
+  const handleSubmitBirthday = (event) => {
+    event.preventDefault();
+    dispatch(addBirthdayParticipation(data)).then(() => {
       setData({
         twitch_username: "",
         email: "",
@@ -47,7 +74,7 @@ const Event = () => {
             subscription. So, if you want to be part of Pititoland, click on the
             panel and contribute to keep this going!
           </p>
-          <form className={classes.eventForm} onSubmit={handleSubmit}>
+          <form className={classes.eventForm} onSubmit={handleSubmitMinecraft}>
             <label htmlFor="twitch_username" className={classes.label}>
               Enter your username to participate
             </label>
@@ -107,7 +134,7 @@ const Event = () => {
             required
             className={`${classes.field} ${classes.formSpacing}`}
           />
-          <form className={classes.eventForm} onSubmit={handleSubmit}>
+          <form className={classes.eventForm} onSubmit={handleSubmitExtensible}>
             <label htmlFor="email" className={classes.label}>
               Enter your email to participate
             </label>
@@ -139,7 +166,7 @@ const Event = () => {
             between those who have registered their participation. Will you be
             the lucky one?
           </p>
-          <form className={classes.eventForm} onSubmit={handleSubmit}>
+          <form className={classes.eventForm} onSubmit={handleSubmitSpecial}>
             <label htmlFor="twitch_username" className={classes.label}>
               Enter your username to participate
             </label>
@@ -183,7 +210,7 @@ const Event = () => {
             birthday streaming and also win one of the gifts that will be drawed
             to celebrate it? Then join the biggest birthday party right now!
           </p>
-          <form className={classes.eventForm} onSubmit={handleSubmit}>
+          <form className={classes.eventForm} onSubmit={handleSubmitBirthday}>
             <label htmlFor="twitch_username" className={classes.label}>
               Enter your username to participate
             </label>
